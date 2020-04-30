@@ -1,4 +1,12 @@
 Per collegare un altro nodo: 
-- da client IU1BOW fare set/spider ALTRONOMINATIVO 
-- salvare uno script in /spider/connect di connessione 
-- aprire il file /spider/cmd/crontab ed effettuare la connessione all'altro nodo 0,10,20,30,40,50 * * * * start_connect('ALTRONOMINATIVO') unless connected('ALTRONOMINATIVO') 
+- da console sysop eseguire set/spider ALTRONOMINATIVO-X
+- salvare uno script in /spider/connect di connessione ALTRONOMINATIVO-X
+
+timeout 120
+connect telnet SERVER-PARTNER PORTA-IP
+'login' 'MIONOMINATIVO-X'
+client ALTRONOMINATIVO-X telnet
+
+- aprire il file /spider/cmd/crontab ed effettuare la connessione all'altro nodo
+
+0,10,20,30,40,50 * * * * start_connect('ALTRONOMINATIVO-X') unless connected('ALTRONOMINATIVO-X') 
