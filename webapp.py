@@ -121,7 +121,7 @@ def spots():
 
 @app.route('/service-worker.js', methods=['GET'])
 def sw():
-    print "call service worker"
+    print ("call service worker")
     return app.send_static_file('service-worker.js')
 
 @app.route('/offline.html')
